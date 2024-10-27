@@ -1,0 +1,8 @@
+factor = float(input("系数"))
+price = float(input("股价"))
+day = float(input("天数"))
+Print("股价是 %s" % (price * factor ** day))
+      print(f"股价是 {price * factor ** day}")
+      print(f"股价是 {price * factor ** day}")
+      print(f"股价是 {price * factor ** day}")
+      print(f"股价是 {price * factor ** day}")

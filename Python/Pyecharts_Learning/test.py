@@ -1,0 +1,20 @@
+from pyecharts.charts import Bar, Timeline
+from pyecharts.options import *
+
+timeline = Timeline()
+bar1 = Bar()
+bar1.add_xaxis([1, 2, 3])
+bar1.add_yaxis("GDP", [10, 20, 30])
+bar2 = Bar()
+bar2.add_xaxis([1, 2, 3])
+bar2.add_yaxis("GDP", [20, 30, 50])
+bar3 = Bar()
+bar3.add_xaxis([1, 2, 3])
+bar3.add_yaxis("GDP", [30, 40, 60])
+bar1.reversal_axis()
+bar2.reversal_axis()
+bar3.reversal_axis()
+timeline.add(bar1, "1")
+timeline.add(bar2, "2")
+timeline.add(bar3, "3")
+timeline.render("test.html")
