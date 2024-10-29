@@ -2,7 +2,7 @@
 
 int insert(char arr1[], char arr2[], int n);
 
-int mian()
+int main()
 {
     char arr1[100];
     char arr2[100];
