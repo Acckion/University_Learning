@@ -28,10 +28,22 @@ unsigned char encryptByte(unsigned char byte)
 
 int main()
 {
-    unsigned char input = 0x66; // 原始数据，二进制：01100110
-    unsigned char encrypted = encryptByte(input);
+    char inputChar;
+    printf("请输入一个字符: ");
+    scanf("%c", &inputChar);
 
-    printf("加密后: 0x%02X\n", encrypted);
+    // 将字符转换为ASCII码
+    unsigned char asciiValue = (unsigned char)inputChar;
+    printf("原始ASCII值: %d\n", asciiValue);
+
+    // 对该ASCII值进行加密
+    unsigned char encryptedValue = encryptByte(asciiValue);
+
+    // 将加密后的值转换回字符
+    char encryptedChar = (char)encryptedValue;
+
+    printf("加密后的ASCII值: %d\n", encryptedValue);
+    printf("加密后的字符: %c\n", encryptedChar);
 
     return 0;
 }

@@ -18,7 +18,7 @@ VWI K MTZIL GIG,CWK VIA MMN ZWDMZM
 
 int main()
 {
-    char n[80];
+    char n[81];
     int k;
     fgets(n, sizeof(n), stdin);
     scanf("%d", &k);
