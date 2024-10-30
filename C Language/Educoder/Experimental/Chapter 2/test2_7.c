@@ -23,6 +23,7 @@ int main()
     fgets(n, sizeof(n), stdin);
     scanf("%d", &k);
     int len = strlen(n);
+    k -= 1;
 
     for (int i = 0; i < len; i++)
     {
@@ -31,6 +32,15 @@ int main()
             n[i] = ((n[i] - 65 + k) % 26) + 65;
         }
     }
+    //printf("%s", n);
+    
+    for (int i = 0; i < len; i++)
+    {
+        if (i % 2 == 1) {
+            char temp = n[i];
+            n[i] = n[i -1];
+            n[i - 1] = temp;
+        }
+    }
     printf("%s", n);
-    return 0;
 }
