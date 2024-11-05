@@ -18,7 +18,7 @@ VWI K MTZIL GIG,CWK VIA MMN ZWDMZM
 
 int main()
 {
-    char n[81];
+    char n[80];
     int k;
     fgets(n, sizeof(n), stdin);
     scanf("%d", &k);
@@ -32,13 +32,14 @@ int main()
             n[i] = ((n[i] - 65 + k) % 26) + 65;
         }
     }
-    //printf("%s", n);
-    
+    // printf("%s", n);
+
     for (int i = 0; i < len; i++)
     {
-        if (i % 2 == 1) {
+        if (i % 2 == 1)
+        {
             char temp = n[i];
-            n[i] = n[i -1];
+            n[i] = n[i - 1];
             n[i - 1] = temp;
         }
     }

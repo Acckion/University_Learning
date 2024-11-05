@@ -30,5 +30,5 @@ int main()
     x = (unsigned short)strtoul(a, NULL, 16);
 
     x = ((x >> m) << (16 - n));
-    printf("%04X", x);
+    printf("%4X", x);
 }

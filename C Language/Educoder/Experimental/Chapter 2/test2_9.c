@@ -13,32 +13,21 @@ dbfp
 */
 
 #include <stdio.h>
+#include <math.h>
 
-    int main()
+int main()
 {
-
-    for (int i = 0; i < 4; i++)
+    char real[100];
+    scanf("%s", real);
+    int i = 0;
+    for (; i <= 101; i++)
     {
-        char c = getchar();
-        c = ((c << 1) & 0x2A | (c >> 1) & 0x15) & 0x3F | (c & 0xC0);
-
-        switch (c >> 6)
+        if (real[i] != 0)
         {
-        case 0:
-            printf("%c", c);
-            break;
-        case 1:
-            printf("%c", (((c << 1) & 0x1E | (c >> 4) & 0x01) & 0x3F) | (c & 0xC0));
-            break;
-        case 2:
-            printf("%c", (((c << 2) & 0x1C | (c >> 3) & 0x03) & 0x3F) | (c & 0xC0));
-            break;
-        case 3:
-            printf("%c", (((c << 3) & 0x18 | (c >> 2) & 0x07) & 0x3F) | (c & 0xC0));
-            break;
+            char temp1 = (((real[i] & 0x2a) >> 1) | ((real[i] & 0x15) << 1)); // 0,2,4与1,3,5位交换
+            real[i] = (real[i] & 0xc0) | ((temp1 << (int)((real[i] & 0xc0) >> 6) & 0x3f) | (temp1 >> (int)(6 - ((real[i] & 0xc0) >> 6)) & 0x3f));
         }
     }
-
-    printf("\n");
+    printf("%s", real);
     return 0;
 }

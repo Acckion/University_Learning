@@ -28,6 +28,6 @@ int main(void)
       sum += temp % 10;
       temp /= 10;
    }
-   printf("%d是%d位数,且各位数字之和为%d。", n_input, count, sum);
+   printf("%d是%d位数，且各位数字之和为%d。", n_input, count, sum);
    return 0;
 }

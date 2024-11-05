@@ -40,6 +40,8 @@ int main()
             continue;
         } // 跳过中文字符的后两个
 
+        /*if (lineCount == 0)
+            lineCount++; // 首行+1*/
         if (currentChar == '\n')
         {
             lineCount++; // 换行+1
