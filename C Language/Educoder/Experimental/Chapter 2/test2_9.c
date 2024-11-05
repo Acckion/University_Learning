@@ -19,8 +19,7 @@ int main()
 {
     char real[100];
     scanf("%s", real);
-    int i = 0;
-    for (; i <= 101; i++)
+    for (int i = 0; i <= 101; i++)
     {
         if (real[i] != 0)
         {
