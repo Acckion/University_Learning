@@ -1,0 +1,22 @@
+$session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
+$session.UserAgent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+$session.Cookies.Add((New-Object System.Net.Cookie("EPORTAL_COOKIE_USERNAME", "U202315604", "/", "172.18.18.61")))
+$session.Cookies.Add((New-Object System.Net.Cookie("EPORTAL_COOKIE_SERVER", "", "/", "172.18.18.61")))
+$session.Cookies.Add((New-Object System.Net.Cookie("EPORTAL_COOKIE_DOMAIN", "", "/", "172.18.18.61")))
+$session.Cookies.Add((New-Object System.Net.Cookie("EPORTAL_COOKIE_SAVEPASSWORD", "true", "/", "172.18.18.61")))
+$session.Cookies.Add((New-Object System.Net.Cookie("EPORTAL_COOKIE_OPERATORPWD", "", "/", "172.18.18.61")))
+$session.Cookies.Add((New-Object System.Net.Cookie("EPORTAL_COOKIE_NEWV", "true", "/", "172.18.18.61")))
+$session.Cookies.Add((New-Object System.Net.Cookie("EPORTAL_COOKIE_PASSWORD", "035468456bab00d8db47f7c6712947c8f7217cb0bd75cbb143bd25ee8b8d48aa9efcab7620113cfadca253a456063d9588d77a4e994d35d6441f99c03d7399e0566944ef90eec25d8244a863c9b9ac157b275d01f6f308619ec188174be513f49532a65eba947c6905b30c3163130c088c5cb03296e98c2bc3c8b9e9dd124498", "/", "172.18.18.61")))
+$session.Cookies.Add((New-Object System.Net.Cookie("EPORTAL_AUTO_LAND", "", "/", "172.18.18.61")))
+$session.Cookies.Add((New-Object System.Net.Cookie("EPORTAL_USER_GROUP", "%E5%8D%8E%E4%B8%AD%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6", "/", "172.18.18.61")))
+$session.Cookies.Add((New-Object System.Net.Cookie("EPORTAL_COOKIE_SERVER_NAME", "%E8%AF%B7%E9%80%89%E6%8B%A9%E6%9C%8D%E5%8A%A1", "/", "172.18.18.61")))
+$session.Cookies.Add((New-Object System.Net.Cookie("JSESSIONID", "F7A034DF8BBB8309807C8330D2B4E7DB", "/", "172.18.18.61")))
+Invoke-WebRequest -UseBasicParsing -Uri "http://172.18.18.61:8080/eportal/success.jsp?userIndex=62663135346264373033336133363562633166323739356464613265393033335f3232322e32302e3130302e3135345f55323032333135363034&keepaliveInterval=0" `
+-Method "HEAD" `
+-WebSession $session `
+-Headers @{
+"Accept"="*/*"
+  "Accept-Encoding"="gzip, deflate"
+  "Accept-Language"="en-US,en;q=0.9"
+  "Referer"="http://172.18.18.61:8080/eportal/success.jsp?userIndex=62663135346264373033336133363562633166323739356464613265393033335f3232322e32302e3130302e3135345f55323032333135363034&keepaliveInterval=0"
+}
